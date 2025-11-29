@@ -1,75 +1,62 @@
-<div align="center">
-  <img src="ton-image.png" />
-  <h1>Mon Super Projet</h1>
-</div>
 <a name="readme-top"></a>
 
 <div align="center">
 
-  <img src="LIEN_VERS_TA_BANNIERE_OU_LOGO.png" alt="Logo" width="100%" height="auto" style="border-radius: 20px;">
+  <h1>☕ Analyse Lexicale : Principes Fondamentaux</h1>
   
-  <br />
-
-  <h1>🚀 [Nom de Ton Projet]</h1>
-
   <p>
-    Une phrase d'accroche percutante qui explique ce que fait ton projet en 5 secondes.
+    <b>Implémentation en Java pur</b>
+  </p>
+  
+  <p>
+    Ce projet pédagogique vise à comprendre les mécanismes internes d'un analyseur lexical (Lexer).
+    Il implémente la reconnaissance de mots simples, nombres et identifiants en utilisant la logique des <b>Automates Finis Déterministes (DFA)</b>.
   </p>
 
   <p>
-    <img src="https://img.shields.io/badge/Made%20with-Python-blue?style=for-the-badge&logo=python" alt="Python">
-    <img src="https://img.shields.io/badge/Database-PostgreSQL-blue?style=for-the-badge&logo=postgresql" alt="Postgres">
-    <img src="https://img.shields.io/github/license/ton-user/ton-repo?style=for-the-badge" alt="License">
+    <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+    <img src="https://img.shields.io/badge/Concept-Automates_Fini-blue?style=for-the-badge" alt="DFA">
+    <img src="https://img.shields.io/badge/IDE-IntelliJ_/_Eclipse-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IDE">
   </p>
 
-  <p>
-    <a href="#demo">Voir la Démo</a> •
-    <a href="#installation">Installation</a> •
-    <a href="#features">Fonctionnalités</a>
-  </p>
+  <a href="#features">Fonctionnalités</a> •
+  <a href="#installation">Exécution</a> •
+  <a href="#code-snippet">Voir le Code</a>
 </div>
 
 ---
 
-<details>
-  <summary>📚 Table des matières</summary>
-  <ol>
-    <li><a href="#about-the-project">À propos du projet</a></li>
-    <li><a href="#built-with">Technologies utilisées</a></li>
-    <li><a href="#getting-started">Commencer</a></li>
-    <li><a href="#usage">Utilisation</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+## 📘 Contexte du Projet
+
+Dans le cadre du module de **Compilation**, ce TP se concentre sur la première étape de la traduction d'un programme : **l'Analyse Lexicale**.
+
+Plutôt que d'utiliser des générateurs comme JFlex, ce projet code la logique "à la main" en Java pour :
+1.  Lire un flux de caractères.
+2.  Identifier des motifs (Patterns) simples.
+3.  Générer des **Tokens** (Unités lexicales).
+
+
 
 ---
 
-## 🧐 À propos du projet <a name="about-the-project"></a>
+## 📂 Organisation du Code <a name="features"></a>
 
-Explique ici pourquoi tu as créé ce projet. Quel problème résout-il ?
+Le projet est structuré pour isoler chaque concept lexical :
 
-> "J'ai créé cette application parce que je trouvais que les outils actuels étaient trop lents..."
-
-### 📸 Démo / Screenshots <a name="demo"></a>
-
-![Capture d'écran de l'application](LIEN_VERS_IMAGE.png)
-
----
-
-## 🛠 Technologies utilisées <a name="built-with"></a>
-
-* **Frontend :** React, TailwindCSS
-* **Backend :** Node.js, Express
-* **Base de données :** MongoDB
+| Fichier / Classe | Description | Concept abordé |
+| :--- | :--- | :--- |
+| `Main.java` | Point d'entrée. Lit le texte et lance l'analyse. | Flux d'entrée/sortie |
+| `Lexer.java` | Le cœur du programme. Parcourt le texte caractère par caractère. | Boucle de lecture |
+| `Token.java` | Classe objet représentant un mot reconnu (Type + Valeur). | Structure de données |
+| `Automate.java` | Implémente les transitions d'états (État 0 -> État 1...). | Logique DFA / Switch-Case |
 
 ---
 
-## 💻 Installation <a name="getting-started"></a>
+## 💻 Installation & Exécution <a name="installation"></a>
 
-Voici comment lancer le projet localement.
+Pas besoin de bibliothèques externes, le **JDK** standard suffit.
 
-1. **Cloner le repo**
-   ```sh
-   git clone [https://github.com/ton-user/ton-repo.git](https://github.com/ton-user/ton-repo.git)
-   const exemple = "C'est super clair !";
-console.log(exemple);
+### 1. Cloner le projet
+```bash
+git clone [https://github.com/ton-user/ton-repo-lexical.git](https://github.com/ton-user/ton-repo-lexical.git)
+cd ton-repo-lexical
